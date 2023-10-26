@@ -3,7 +3,7 @@
     <string name="activity_text">This is Main Activity</string>
     <string name="fragment_one_text">This is First Fragment</string>
     <string name="fragment_two_text">This is Second Fragment</string>
+    <string name="fragment_three_text">This is Third Fragment</string>
     <string name="fragment_button_text">Click Me!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_button_text2">Show Fragment 3</string>
 </resources>
