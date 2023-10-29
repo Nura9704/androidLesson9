@@ -9,6 +9,7 @@ import android.widget.Button
 
 class FragmentOne : Fragment() {
     private lateinit var fragmentOneButton: Button
+    private val text: String = "Hello Nurasyl"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,13 +30,22 @@ class FragmentOne : Fragment() {
 
     private fun initListeners() {
         fragmentOneButton.setOnClickListener {
-            makeToast()
+            //makeToast()
+            putText()
         }
     }
 
-    private fun makeToast() {
-        (activity as OnButtonClick).onFragmentClick("Hello Nurasyl")
+    private fun putText() {
+        val bundle = Bundle()
+        bundle.putString("data", text)
+        val fragment = FragmentTwo()
+        fragment.arguments = bundle
+        fragmentManager?.beginTransaction()?.replace(R.id.fragmentTwo, fragment)?.commit()
     }
+
+    /*private fun makeToast() {
+        (activity as OnButtonClick).onFragmentClick("Hello Nurasyl")
+    }*/
 
     interface OnButtonClick {
         fun onFragmentClick(text: String)

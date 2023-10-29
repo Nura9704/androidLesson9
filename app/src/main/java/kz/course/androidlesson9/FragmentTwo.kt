@@ -21,13 +21,20 @@ class FragmentTwo : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews(view)
+        fetchData()
     }
 
     private fun initViews(view: View) {
         fragmentTwoTextView = view.findViewById(R.id.fragmentTwoTextView)
     }
 
-    fun setFragmentText(text: String) {
-        fragmentTwoTextView.text = text
+    private fun fetchData() {
+        val arguments = this.arguments
+        val inputData = arguments?.get("data")
+        fragmentTwoTextView.text = inputData.toString()
     }
+
+    /*fun setFragmentText(text: String) {
+        fragmentTwoTextView.text = text
+    }*/
 }

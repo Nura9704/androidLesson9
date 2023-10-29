@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.fragment.app.Fragment
 
-class MainActivity : AppCompatActivity(), FragmentOne.OnButtonClick {
+class MainActivity : AppCompatActivity() {
     private lateinit var showFragmentButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +31,12 @@ class MainActivity : AppCompatActivity(), FragmentOne.OnButtonClick {
         transaction.commit()
     }
 
-    override fun onFragmentClick(text: String) {
+    /*override fun onFragmentClick(text: String) {
         //Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
 
         val fragmentTwo = supportFragmentManager.findFragmentById(R.id.fragmentTwo) as FragmentTwo
         fragmentTwo.setFragmentText(text)
-    }
+    }*/
 
 
 }
